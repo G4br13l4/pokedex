@@ -62,17 +62,19 @@ body {
     font-size: 50px;
 }
 
-#f-image {
+#image {
     height: 150px;;
     background-repeat:no-repeat;
     background-position: center center;
-    transform: scale(2);
+    transform: scale(2,2);
 }
 
  #data-bullets{
     background: black;
     color: #06FF01;
     border-radius: 8px;
+    padding-top: 5px;
+    word-break: break-all;
 }
 
 .white {
