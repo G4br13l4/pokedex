@@ -20,7 +20,7 @@ body {
 }
 
 .modal-content{
-    background: #E20612;
+    background: rgb(226, 6, 18);
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
@@ -37,6 +37,7 @@ body {
     border-radius: 50%;
     float: left;
     margin-right: 5px;
+    box-shadow: 4px 3px 10px rgba(134, 1, 7, 0.856);
 }
 
 .dot{
@@ -44,6 +45,7 @@ body {
     width: 25px;
     border-radius: 50%;
     display: inline-block;
+    box-shadow: 4px 3px 10px rgba(134, 1, 7, 0.856);
 }
 
 .red-dot {
@@ -55,7 +57,7 @@ body {
 }
 
 .green-dot {
-    background: #50AD5E; 
+    background: #50AD5E;
 }
 
 .close{
@@ -73,10 +75,16 @@ body {
     background: black;
     color: #06FF01;
     border-radius: 8px;
-    padding-top: 5px;
+    padding: 15px;
+    width: 46%;
     word-break: break-all;
 }
 
 .white {
     color: white;
 }
+
+#title-bullets{
+    margin-bottom: 15px;
+}
+

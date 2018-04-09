@@ -39,38 +39,55 @@ function getData(){
                 .then(function(response) {
                     response.json().then(
                       function(data){
-                        
+        
                         // obtaining data
-                        var frontImage = data.sprites.front_default;
-                        var backImage = data.sprites.back_default;
+                        let frontImage = data.sprites.front_default;
+                        let backImage = data.sprites.back_default;
                         let name = data.name.toUpperCase();
                         let height = data.height;
                         let weight = data.weight;
                         let types = data.types;
                         let abilities = data.abilities;
+                        let stats = data.stats;
             
                         let typeTemplate = ``;
                         types.forEach(function (element){
                           let type = element.type.name;
-                          typeTemplate += `*${type}`;
+                          typeTemplate += `<li>${type}</li>`;
                         });
                         
-            
                         let abilityTemplate = ``;
                         abilities.forEach(function (element){
                           let ability = element.ability.name;
-                          abilityTemplate += `*${ability}`;
+                          abilityTemplate += `<li>${ability}</li>`;
+                        });
+
+                        stats.forEach(function (element){
+                         
+                          //Getting data of speed, hp, defense & attack
+                          if(element.stat.name=="speed"){
+                            let speed= element.base_stat;
+                            document.getElementById("speed").innerHTML = speed;
+                          }else if(element.stat.name=="hp"){
+                            let hp= element.base_stat;
+                            document.getElementById("hp").innerHTML = hp;
+                          }else if(element.stat.name=="defense"){
+                            let defense= element.base_stat;
+                            document.getElementById("defense").innerHTML = defense;
+                          }else if(element.stat.name=="attack"){
+                            let attack= element.base_stat;
+                            document.getElementById("attack").innerHTML = attack;
+                          }
                         });
                         
                         // adding data to html
                         document.getElementById("image").style.backgroundImage = `url('${frontImage}')`;
-                        document.getElementById("name").innerText = name;
-                        document.getElementById("height").innerText = height;
-                        document.getElementById("weight").innerText = weight;
+                        document.getElementById("name").innerHTML = name;
+                        document.getElementById("height").innerHTML = height;
+                        document.getElementById("weight").innerHTML = weight;
                         document.getElementById("type").innerHTML = typeTemplate;
                         document.getElementById("ability").innerHTML = abilityTemplate;
-                        
-                        
+                                    
                         //Function for changing the image of the pokemon
                         $(document).on("click", "#rotate-img", changeImage);
 
@@ -101,14 +118,18 @@ function getData(){
 
                         // Obtaining data
                         let bios = data.flavor_text_entries;
-                       
+                        let capRate = data.capture_rate; 
+                        let habitat = data.habitat.name;
+                        
                         let firstBio = bios.find(function(element) {
                           return element.language.name == "en";
                         });
-            
                         let description = firstBio.flavor_text;
+            
                         //Adding data to HTML
                         document.getElementById("description").innerHTML = description;
+                        document.getElementById("habitat").innerHTML = habitat;
+                        document.getElementById("cap-rate").innerHTML = capRate;
                       });
                   })
             }
@@ -119,9 +140,15 @@ function getData(){
               document.getElementById("name").innerText = "";
               document.getElementById("height").innerText = "";
               document.getElementById("weight").innerText = "";
+              document.getElementById("habitat").innerHTML = "";
               document.getElementById("type").innerHTML = "";
               document.getElementById("ability").innerHTML = "";
               document.getElementById("description").innerHTML = "";
+              document.getElementById("speed").innerHTML = "";
+              document.getElementById("hp").innerHTML = "";
+              document.getElementById("defense").innerHTML = "";
+              document.getElementById("attack").innerHTML = "";
+              document.getElementById("cap-rate").innerHTML = "";
             }
 
           }

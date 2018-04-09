@@ -36,30 +36,57 @@
             <button type="button" class="close" id="close-modal" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           </div>
           <div class="modal-body">
+
             <div class="row">
+
               <div class="col-lg-6 col-xs-6">
-                  <p><strong id="name" class="white"></strong></p>
-                  <div id="image"></div>
-              </div>
-              <!-- Bullets -->
-              <div class="col-lg-6 col-xs-5" id="data-bullets">
-                  <p class="text-center">
-                      <i class="fas fa-sync-alt fa-2x text-center front" id="rotate-img"></i>
-                  </p>
-                  <p>Height:<span id="height"></span></p> 
-                  <p>Weight:<span id="weight"></span></p> 
-                  <p>Type:<span id="type"></span></p>
-                  <p>Abilities:<span id="ability"></span></p> 
+
+                <div class="row white">
+                  <!-- Image-->
+                  <div class="col-xs-12">
+                    <p><strong id="name" class="white"></strong></p>
+                    <div id="image"></div>
+                  </div>
+                  <!-- About -->
+                  <div class="col-xs-12">  
+                    <div><p><strong>ABOUT:</strong></p><p id="description"></p></div>
+                  </div>
                 </div>
+      
+              </div>
+
+              <!-- Bullets -->
+              <div class="col-xs-5" id="data-bullets">
+
+                <div class="row">
+                  <!-- First section of bullets -->
+                  <div class="col-xs-12" id="title-bullets">
+                      <p class="text-center">
+                          <i class="fas fa-sync-alt fa-2x text-center front" id="rotate-img"></i>
+                      </p>
+                  </div>
+                  <div class="col-xs-12 col-lg-6">
+                    <p>Height: <span id="height"></span></p> 
+                    <p>Weight: <span id="weight"></span></p> 
+                    <p>Habitat: <span id="habitat"></span></p>
+                    <p>Type: </p>
+                      <ul id="type"></ul>
+                    <p>Abilities: </p>
+                      <ul id="ability"></ul>
+                  </div>
+
+                  <!-- Second Section of Bullets -->
+                  <div class="col-xs-12 col-lg-6">
+                    <p>Speed: <span id="speed"></span></p>
+                    <p>HP: <span id="hp"></span></p>
+                    <p>Attack: <span id="attack"></span></p>
+                    <p>Defense: <span id="defense"></span></p>
+                    <p>Capture Rate: <span id="cap-rate"></span></p>
+                  </div>
+                </div>  
+
             </div>
-            <div class="row white">
-              <div class="col-lg-6 col-xs-12">
-                <div><p><strong>ABOUT:</strong></p><p id="description"></p></div>
-              </div>  
-            </div>
-            
-            
-          </div>
+          </div>   
         </div>
       </div>
     </div>
