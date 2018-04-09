@@ -8,7 +8,7 @@ function getData(){
             paintPokemons(pokemons);
             $(document).on("click", ".icon_bullet", paintModal);
             $(document).on("click", ".icon_bullet", paintMoreDetails);
-            
+            document.getElementById("close-modal").addEventListener("click", cleanModal);
             
             function paintPokemons(pokemons){
               let template = ``;
@@ -33,6 +33,7 @@ function getData(){
             }
             
             function paintModal(){
+              
               let id = event.target.id;
               fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
                 .then(function(response) {
@@ -97,7 +98,7 @@ function getData(){
                 .then(function(response) {
                     response.json().then(
                       function(data){
-            
+
                         // Obtaining data
                         let bios = data.flavor_text_entries;
                        
@@ -111,6 +112,18 @@ function getData(){
                       });
                   })
             }
+            
+            function cleanModal(){
+              // Clean spaces
+              document.getElementById("image").style.backgroundImage = "";
+              document.getElementById("name").innerText = "";
+              document.getElementById("height").innerText = "";
+              document.getElementById("weight").innerText = "";
+              document.getElementById("type").innerHTML = "";
+              document.getElementById("ability").innerHTML = "";
+              document.getElementById("description").innerHTML = "";
+            }
+
           }
         );
     });
