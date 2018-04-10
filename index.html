@@ -15,12 +15,26 @@
   <body>
     <!-- Home -->
     <div class="container">
+     
       <div class="row">
-        <div class="col-lg-6 col-xs-8 col-lg-offset-3 col-xs-offset-2" id="title">
+        <div class="col-xs-2" onclick="getData()">
+          <i class="far fa-arrow-alt-circle-left fa-3x" id="return"></i>
+        </div>
+        <div class="col-xs-8" id="title" onclick="getData()">
           <img class="img-responsive" src="assets/images/pokemon_title.png" alt="pokemon">
         </div>
       </div>
 
+      <div class=" row">
+        <div class="col-lg-6 col-xs-12 col-lg-offset-3">
+          <div class="input-group">
+            <input type="text" id="searcher" class="form-control" placeholder="I Choose You!...(pokemon's name)">
+            <span class="input-group-btn">
+              <button class="btn btn-default" id="search-btn" type="button">Go!</button>
+            </span>
+          </div>
+        </div>    
+      </div>
       <div class="row" id="pokemon-container"></div>
     </div>
 
