@@ -4,6 +4,7 @@ body {
     background-attachment: fixed;
     background-position: center top;
     background-repeat: no-repeat;
+    font-family: 'Black Ops One', cursive;
 }
 
 /* pokeball icon */
@@ -15,20 +16,32 @@ body {
     cursor: pointer;
 }
 
-.pokemon-box{
-    font-family: 'Black Ops One', cursive;
-}
-
 .modal-content{
     background: rgb(226, 6, 18);
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 #title {
-    margin-top: 3%;
     margin-bottom: 5%;
+    margin-top: 5%;
 }
 
+#return{
+    margin-top: 25%;
+}
+
+#searcher{
+    background: none;
+    border: 2px solid  #3368B0;
+}
+
+input[type="text"]#searcher::-webkit-input-placeholder {
+    color: rgb(29, 29, 97);
+  }
+
+#pokemon-container {
+    margin-top: 5%;
+}
 /*lights of modal*/
 .big-dot {
     height: 50px;

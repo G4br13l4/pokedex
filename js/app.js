@@ -1,6 +1,5 @@
-
 function getData(){
-    fetch(`https://pokeapi.co/api/v2/pokemon-species`)
+    fetch(`https://pokeapi.co/api/v2/pokemon-species/?limit=803&offset=0`)
     .then(function(response) {
         response.json().then(
           function(data){
@@ -9,6 +8,7 @@ function getData(){
             $(document).on("click", ".icon_bullet", paintModal);
             $(document).on("click", ".icon_bullet", paintMoreDetails);
             document.getElementById("close-modal").addEventListener("click", cleanModal);
+            document.getElementById("search-btn").addEventListener("click", searchPokemons);
             
             function paintPokemons(pokemons){
               let template = ``;
@@ -20,7 +20,7 @@ function getData(){
                 name = firstLetter + otherLetter;
             
                 template += `
-                <div class="pokemon-box text-center col-lg-3 col-xs-6">
+                <div data-name="${name}" class="pokemon-box text-center col-lg-2 col-xs-4">
                  <img src="assets/images/pokeball_bullet.png" class="icon_bullet" 
                  data-toggle="modal" data-target=".pokemonModal" 
                  id="${id}">
@@ -30,6 +30,7 @@ function getData(){
                 
               });
               document.getElementById("pokemon-container").innerHTML = template;
+              document.getElementById("searcher").value = ""; //Clean input search
             }
             
             function paintModal(){
@@ -149,6 +150,19 @@ function getData(){
               document.getElementById("defense").innerHTML = "";
               document.getElementById("attack").innerHTML = "";
               document.getElementById("cap-rate").innerHTML = "";
+            }
+
+            function searchPokemons(){
+              
+              //Getting all the pokemons divs displayed on screen
+              let allPokemons = Array.from(document.getElementsByClassName("pokemon-box"));
+              let searchedPokemon = document.getElementById("searcher").value;
+              
+              allPokemons.forEach(element => {
+                if(element.dataset.name !== searchedPokemon){
+                  element.classList.add("hidden");
+                }
+              });
             }
 
           }
