@@ -159,7 +159,7 @@ function getData(){
               let searchedPokemon = document.getElementById("searcher").value;
               
               allPokemons.forEach(element => {
-                if(element.dataset.name !== searchedPokemon){
+                if(element.dataset.name[0] !== searchedPokemon[0]){
                   element.classList.add("hidden");
                 }
               });
