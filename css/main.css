@@ -9,8 +9,10 @@ body {
 
 @media only screen and (max-width: 600px) {
     body {
+        background-size: cover;
+        background-attachment: fixed;
         background-position: center center;
-        background-repeat:repeat-y;
+        background-repeat: no-repeat;
     }
 }
 
