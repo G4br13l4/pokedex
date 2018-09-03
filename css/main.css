@@ -7,6 +7,13 @@ body {
     font-family: 'Black Ops One', cursive;
 }
 
+@media only screen and (max-width: 600px) {
+    body {
+        background-position: center center;
+        background-repeat:repeat-y;
+    }
+}
+
 /* pokeball icon */
 .icon_bullet{ 
     width: 3rem;
