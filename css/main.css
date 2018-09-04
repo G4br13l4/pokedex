@@ -1,6 +1,7 @@
 body {
     background-image: url(../assets/images/sky.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center top;
     font-family: 'Black Ops One', cursive;
@@ -9,6 +10,7 @@ body {
 @media only screen and (max-width: 600px) {
     body{
         background-position: center center;
+        overflow: scroll;
     }    
 }
 
